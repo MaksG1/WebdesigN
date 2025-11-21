@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List REST API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✅ Мій Список Завдань</h1>
+
+        <div class="add-task-form">
+            <h2>Додати нове завдання</h2>
+            <input type="text" id="task-title" placeholder="Назва завдання" required>
+            <input type="text" id="task-description" placeholder="Опис завдання" required>
+            <button id="add-task-btn">Додати</button>
+        </div>
+
+        <div class="task-list-container">
+            <h2>Список усіх завдань</h2>
+            <div id="tasks-list">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
