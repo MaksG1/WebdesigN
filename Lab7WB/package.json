@@ -1,0 +1,22 @@
+{
+  "name": "schedule-api",
+  "version": "1.0.0",
+  "description": "REST API для керування розкладом занять з використанням Express.js та JSON-файлу як бази даних.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "rest-api",
+    "schedule",
+    "crud"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2"
+  }
+}

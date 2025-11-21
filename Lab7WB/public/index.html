@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розклад Занять (API CRUD)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📅 Керування Розкладом Занять</h1>
+        
+        <div class="controls-section">
+            <h2>Пошук за Днем Тижня</h2>
+            <div class="form-group">
+                <input type="text" id="filter-day" placeholder="Введіть день (наприклад, Понеділок)">
+                <button id="filter-btn" class="action-btn primary">Фільтрувати</button>
+                <button id="reset-filter-btn" class="action-btn secondary">Скинути</button>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <h2 id="form-title">Додати Новий Запис</h2>
+            <form id="schedule-form">
+                <input type="hidden" id="item-id">
+                <div class="form-group">
+                    <label for="day">День:</label>
+                    <input type="text" id="day" name="day" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Предмет:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Час:</label>
+                    <input type="text" id="time" name="time" placeholder="HH:MM" required>
+                </div>
+                <div class="form-group">
+                    <label for="room">Аудиторія:</label>
+                    <input type="text" id="room" name="room" required>
+                </div>
+                
+                <button type="submit" id="submit-btn" class="action-btn primary">Додати Запис</button>
+                <button type="button" id="cancel-btn" class="action-btn secondary hidden">Скасувати оновлення</button>
+            </form>
+        </div>
+
+        <div class="data-section">
+            <h2>Поточний Розклад</h2>
+            <div id="schedule-list" class="data-list">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
