@@ -1,0 +1,89 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.note {
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.update-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.update-btn:hover {
+    background-color: #218838;
+}
+
+.update-btn:active {
+    transform: scale(0.98);
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 2px solid #ccc;
+}
+
+.advice-card {
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.advice-card p {
+    margin: 0;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.advice-card strong {
+    color: #007bff;
+}
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+    }
+    .update-btn {
+        width: 100%;
+    }
+}

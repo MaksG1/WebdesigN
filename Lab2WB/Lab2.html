@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advice Slip API - Поради</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Поради від Advice Slip API</h1>
+    <p class="note">Примітка: Поради надаються англійською мовою, оскільки API не підтримує українську.</p>
+    
+    <div class="controls">
+      <button id="btnFetchRandom" class="update-btn">Оновити: Випадкова порада (Fetch)</button>
+      <button id="btnAxiosTop5" class="update-btn">Оновити: ТОП-5 порад (Axios)</button>
+    </div>
+
+    <div id="result">
+      <p>Оберіть кнопку для завантаження даних.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
