@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати Кулінарний Рецепт</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input[type="text"], textarea, select { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        textarea { resize: vertical; }
+        button { background-color: #5cb85c; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px; }
+        button:hover { background-color: #4cae4c; }
+        .error { color: #d9534f; margin-top: 5px; font-size: 0.9em; }
+        .success { color: #5cb85c; margin-top: 10px; font-weight: bold; }
+        .field-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ Додати Кулінарний Рецепт</h1>
+
+        {{#if successMessage}}
+            <p class="success">{{successMessage}}</p>
+        {{/if}}
+
+        <form action="/add-recipe" method="POST">
+            <div class="field-group">
+                <label for="name">Назва Рецепту (title):</label>
+                <input type="text" id="name" name="name" value="{{formData.name}}">
+                {{#if errors.name}}<p class="error">{{errors.name}}</p>{{/if}}
+            </div>
+
+            <div class="field-group">
+                <label for="ingredients">Інгредієнти (ingredients):</label>
+                <textarea id="ingredients" name="ingredients" rows="5">{{formData.ingredients}}</textarea>
+                {{#if errors.ingredients}}<p class="error">{{errors.ingredients}}</p>{{/if}}
+            </div>
+
+            <div class="field-group">
+                <label for="cookingTime">Час Приготування у хвилинах (cookingTime):</label>
+                <input type="text" id="cookingTime" name="cookingTime" value="{{formData.cookingTime}}">
+                {{#if errors.cookingTime}}<p class="error">{{errors.cookingTime}}</p>{{/if}}
+            </div>
+
+            <div class="field-group">
+                <label for="difficulty">Складність (difficulty):</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="" disabled {{#unless formData.difficulty}}selected{{/unless}}>Оберіть складність</option>
+                    <option value="easy" {{#if (eq formData.difficulty 'easy')}}selected{{/if}}>Easy</option>
+                    <option value="medium" {{#if (eq formData.difficulty 'medium')}}selected{{/if}}>Medium</option>
+                    <option value="hard" {{#if (eq formData.difficulty 'hard')}}selected{{/if}}>Hard</option>
+                </select>
+                {{#if errors.difficulty}}<p class="error">{{errors.difficulty}}</p>{{/if}}
+            </div>
+            
+            <button type="submit">Зберегти Рецепт</button>
+        </form>
+    </div>
+</body>
+</html>
