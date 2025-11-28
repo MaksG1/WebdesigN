@@ -1,0 +1,36 @@
+<body>
+    <header>
+        <h1 id="welcome-message">Вітаємо!</h1> <button id="logout-btn">Вихід</button>
+    </header>
+
+    <div class="container">
+        <canvas id="taskChart"></canvas>
+
+        <section id="filters">
+            <button data-filter="all">Усі</button>
+            <button data-filter="completed">Виконані</button>
+            <button data-filter="pending">Невиконані</button>
+            <button data-filter="high-priority">🔥 Високий пріоритет</button> </section>
+
+        <section id="add-task">
+            <h2>📝 Додати нове завдання</h2>
+            <form id="add-task-form">
+                <input type="text" id="task-title" placeholder="Назва завдання" required>
+                <select id="task-priority">
+                    <option value="Низька">Низька</option>
+                    <option value="Середня" selected>Середня</option>
+                    <option value="Висока">Висока</option>
+                </select>
+                <button type="submit">Додати</button>
+            </form>
+        </section>
+
+        <section id="task-list">
+            <h2>📋 Ваш список завдань</h2>
+            <ul id="tasks-ul"></ul>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
