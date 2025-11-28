@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Дашборд</title>
+</head>
+<body>
+    <h2>Вітаємо, <%= userName %>!</h2>
+    
+    <% if (success_msg.length > 0) { %>
+        <p style="color: green;"><%= success_msg %></p>
+    <% } %>
+
+    <p>Ви успішно увійшли до захищеної області.</p>
+    
+    <a href="/logout">
+        <button>Вихід</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід</title>
+</head>
+<body>
+    <h2>Вхід користувача</h2>
+
+    <% if (success_msg.length > 0) { %>
+        <p style="color: green;"><%= success_msg %></p>
+    <% } %>
+    
+    <% if (error_msg.length > 0) { %>
+        <p style="color: red;"><%= error_msg %></p>
+    <% } %>
+
+    <% if (errors && errors.length > 0) { %>
+        <div style="color: red; border: 1px solid red; padding: 10px; margin-bottom: 10px;">
+            <% errors.forEach(function(error) { %>
+                <p><%= error %></p>
+            <% }); %>
+        </div>
+    <% } %>
+
+    <form action="/login" method="POST">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required value="<%= old.email || '' %>">
+        </div>
+        <div>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Увійти</button>
+    </form>
+    <p>Не маєте акаунту? <a href="/register">Зареєструватись</a></p>
+</body>
+</html>
